@@ -1,1 +1,1 @@
-# Polygon-Proof-of-Stake (Module -1)
+# POLY PROOF: Advanced (Module-1)
