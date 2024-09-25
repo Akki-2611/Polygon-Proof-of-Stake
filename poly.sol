@@ -12,12 +12,12 @@ contract kitty is ERC721A {
 
     // Base url for the nfts
     string baseUrl =
-        "https://gateway.pinata.cloud/ipfs/QmcX3QoHU2kSJwEacBDqXpLJ3XhEGf3cawpffjarGwMqaQ/";
+        "https://cyan-genetic-guppy-409.mypinata.cloud/ipfs/Qmcg2ZEw7QpbaHbWfcjiezt4SgzzisczF6QQadX4hfz3fj/";
 
     // URL for the prompt description
-    string public prompt = "A vaish wearing blue jersey cheering the crowd";
+    string public prompt = "Cute pictures";
 
-    constructor() ERC721A("vaish", "CRT") {
+    constructor() ERC721A("kitty", "POLY") {
         owner = msg.sender;
     }
 
@@ -27,7 +27,7 @@ contract kitty is ERC721A {
         _;
     }
 
-    // Function to mint NFT which only owner can perform
+    // Function to mint NFT (only owner can perform)
     function mint(uint256 quantity) external payable onlyOwner {
         require(
             totalSupply() + quantity <= maxQuantity,
@@ -36,7 +36,7 @@ contract kitty is ERC721A {
         _mint(msg.sender, quantity);
     }
 
-    // Override the baseURI function to return the base URL for the NFTs
+    // Override the baseURI function (return the base URL for the NFTs)
     function _baseURI() internal view override returns (string memory) {
         return baseUrl;
     }
